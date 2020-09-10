@@ -29,7 +29,7 @@ module.exports.pedidos = async(idCliente)=>{
       aux.push({
         id: e.id,
         total,
-        fecha: e.fecha,
+        fecha: `${e.fecha.getDate()}-${e.fecha.getMonth()+1}-${e.fecha.getFullYear() }`,
         estado: e.estado
       })
     });
