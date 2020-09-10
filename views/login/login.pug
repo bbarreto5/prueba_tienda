@@ -1,0 +1,23 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/stylesheets/style_login.css')
+  script(src='https://kit.fontawesome.com/4eb2a2e35e.js' crossorigin='anonymous')
+  title Document
+.contenedor
+  .icon_store
+    i.fas.fa-shopping-cart
+  form.login(action='')
+    .contenedor_inicio_sesion
+      h2.inicio_sesion Iniciar sesi&oacute;n
+    .contenedor_input
+      label.label_input(for='email') Correo Electronico
+      input.input(type='email' name='email' id="email")
+    .contenedor_input
+      label.label_input(for='pass') Contrase&ntilde;a
+      input.input(type='password' name='pass' id="pass")
+    input.button_login(type='button' value='login' id="login")
+  h1.logotipo
+    | Tienda
+script(src='/javascripts/main_login.js')

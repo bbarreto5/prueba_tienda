@@ -1,0 +1,189 @@
+
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      z-index: 1;
+  }
+  
+  .item1 { grid-area: nav; background-color: #048ABF; }
+  .item2 { 
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #048ABF;
+    color: white;
+    font-size: 40px;
+  }
+  .item3 { 
+    grid-area: section;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  
+  .grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 15fr 85fr;
+    grid-template-rows: 7fr 93fr;
+    grid-template-areas:
+    'nav header' 
+    'nav section';
+  }
+
+  .contenedor_imagen_perfil{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contenedor_imagen_perfil img{
+    width: 80%;
+  }
+
+  .carta_nombre{
+    margin-top: 20px;
+    width: 80%;
+    background: #049DD9;
+    font-size: 1vw;
+    text-transform: uppercase;
+    padding: 8px;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
+
+  .menu{
+    width: 100%;
+    height: 50%;
+    color: white;
+  }
+
+  .rutas{
+    width: 100%;
+    height: 50px;
+    font-size: 1.3vw;
+    text-transform: uppercase;
+    padding-left: 10%;
+  }
+
+  .rutas i{
+    padding-right: 10px;
+  }
+  
+  .salir{
+    width: 100%;
+    height: 10%;
+    color: white;
+    font-size: 1.3vw;
+    text-transform: uppercase;
+    padding-left: 10%;
+  }
+  .salir i{
+    padding-right: 10px;
+  }
+
+  .contenedor_notificacion{
+    position: absolute;
+  }
+  .contador{
+    position: absolute;
+    background: red;
+    width: 24px;
+    height: 24px;
+    top: -8px;
+    right: -10px;
+    border-radius: 50%;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 1000;
+  }
+
+  .modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+  }
+
+  .ocultar_modal{
+    opacity: 0;
+    z-index: 0;
+  }
+  .contenedor_lista_pedidos{
+    width: 70vw;
+    height: 70vh;
+    background: white;
+    border-radius: 24px;
+    overflow: none;
+    padding: 15px 30px;
+  }
+
+  .logotipo{
+    width: 100%;
+    height: 10%;
+    font-size: 44px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: bold;
+  }
+
+  .contenedor_table{
+    height: 70%;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .lista_productos{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .lista_productos td,  .lista_productos th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .lista_productos tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .footer_lista{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .footer_lista button{
+    font-size: 28px;
+    color: white;
+    border-radius: 18px;
+    width: 200px;
+    border: none;
+    background: #006740;
+    padding: 5px;
+    outline: none;
+  }
+
+

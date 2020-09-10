@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.icon_store{
+    position: relative;
+    top: calc((100% - 25vw) / 2);
+    left: 5%;
+}
+
+.icon_store i{
+    font-size: 25vw;
+    background: url(/images/store.jpg);
+    background-size: cover;
+    width: fit-content;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.contenedor{
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  border-radius: 48px;
+  background-color: white;
+  -webkit-box-shadow: 2px 3px 14px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 3px 14px 5px rgba(0,0,0,0.75);
+  box-shadow: 2px 3px 14px 5px rgba(0,0,0,0.75);
+}
+
+body{
+    background: url(/images/store.jpg);
+}
+
+.login{
+    position: absolute;
+    top: calc((100% - 25vw) / 2);
+    right: 5%;
+    width: 25vw;
+    height: 25vw;
+}
+
+.logotipo{
+    position: absolute;
+    top: 0px;
+    right: 5%;
+    font-weight: 1000;
+    text-transform: uppercase;
+    font-size: 40px;
+    letter-spacing: 10px;
+    color: #048ABF;
+}
+.contenedor_inicio_sesion{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.inicio_sesion{
+    text-transform: lowercase;
+    color: #048ABF;
+    font-size: 34px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.label_input{
+    text-transform: capitalize;
+    color:#048ABF;
+    font-size: 24px;
+}
+
+.input{
+    width: 90%;
+    height: 50px;
+    border-radius: 24px;
+    outline: none;
+    border: 1px solid;
+    padding-left: 15px;
+    font-size: 30px;
+}
+.contenedor_input{
+    margin-bottom: 30px;
+}
+
+.button_login{
+    width: 90%;
+    height: 50px;
+    border-radius: 24px;
+    outline: none;
+    border: 1px solid;
+    background: #048ABF;
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+}
