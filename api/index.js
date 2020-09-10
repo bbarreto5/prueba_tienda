@@ -1,6 +1,7 @@
+const { login } = require('./login.js');
 var express = require('express');
 var router = express.Router();
-var login = require('./login.js')
+
 
 function validatePass(pass) {
   const re = /^\d+$/;
@@ -15,13 +16,23 @@ function validateEmail(email) {
 
 
 /* GET home page. */
-router.post('/login', function(req, res, next) {
+router.post('/login', async function(req, res, next) {
   let { email, pass } = req.body;
   try {
    if(validateEmail(email) && validatePass(pass)){
-      req.session.email = email;
-      req.session.save();
-      res.status(200).send("ok")
+      let aux = await login(email,pass);
+      if( aux == null || aux == undefined){
+        res.status(400).json({
+          success: false
+        })
+      }else{
+        req.session.email = email;
+        req.session.name = aux[0].nombre+" "+aux[0].apellido;
+        req.session.save();
+        res.status(400).json({
+          success: true
+        })
+      }
    }else{
      res.status(400).send("bad request")
    } 

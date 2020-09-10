@@ -1,17 +1,19 @@
 var express = require('express');
 var router = express.Router();
+const { productos } = require('../api/bodega.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('login/login', { title: 'Express' });
 });
 
-router.get('/bodega', function(req, res, next) {
+router.get('/bodega', async function(req, res, next) {
   const { email, name} = req.session;
   if(email != undefined){
+    let auxProductos = await productos();
     res.render('bodega/bodega', { 
-      title: 'Express',
-      nombre: name
+      nombre: name,
+      productos: auxProductos
     });
   }else{
     res.redirect('/');

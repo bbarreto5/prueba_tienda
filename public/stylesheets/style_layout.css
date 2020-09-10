@@ -1,5 +1,3 @@
-
-  
   * {
       margin: 0;
       padding: 0;
@@ -19,9 +17,11 @@
   }
   .item3 { 
     grid-area: section;
-    overflow: scroll;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+    overflow-y: scroll;
   }
   
   .grid-container {
@@ -106,6 +106,11 @@
     align-items: center;
     justify-content: center;
     font-weight: 1000;
+    opacity: 1;
+  }
+
+  .ocultar_contador{
+    opacity: 0;
   }
 
   .modal{
@@ -133,6 +138,7 @@
     border-radius: 24px;
     overflow: none;
     padding: 15px 30px;
+    z-index: 766;
   }
 
   .logotipo{

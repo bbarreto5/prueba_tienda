@@ -1,5 +1,16 @@
 extends ../layout/layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  each p in productos 
+    .carta
+      h3.titulo=p.nombre   
+      p.Descripsion  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      img.foto(src='/images/oreo.jpg' alt='')
+      .contenedor_cantidad
+        span.precio $ #{p.precio} 
+        .cantidad
+          button.boton_cantidad(onclick=`less(this)`) -
+          span  0 
+          button.boton_cantidad(onclick=`plus(this)`) +
+      button.boton_agregar(onclick=`agregar(${p.precio},this,"${p.nombre}")`) AGREGAR
+  script(src='/javascripts/main_bodega.js')

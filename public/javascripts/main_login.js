@@ -11,13 +11,18 @@ boton.onclick = ()=>{
     }else{
         let data = { email: email.value, pass: pass.value };
         fetch(url, {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
+            method: 'POST', 
+            body: JSON.stringify(data), 
             headers:{
                 'Content-Type': 'application/json'
             }
-        }).then(res => location.href ="/bodega")
+        }).then(res => res.json())
         .catch(error => alert("error en la peticion"))
+        .then(res => {
+            (res.success)
+            ? location.href ="/bodega"
+            : alert("usuario no encontrado")
+        })
     }
 }
 

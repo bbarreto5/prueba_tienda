@@ -1,22 +1,12 @@
-const { Pool, Client } = require('pg');
+const { Client } = require('pg');
  
 module.exports.client = new Client({
   user: 'postgres',
-  host: '35.199.84.6',
-  database: 'postgres',
+  host: 'localhost',
+  database: 'tienda_prueba',
   password: 'postgres',
   port: 5432,
 });
-
-module.exports.getAllUser = async()=>{
-    try {
-      client.connect();
-      let res = await client.query(`SELECT * FROM dev.users;`);
-      return res.rows;
-    } catch (error) {
-        return error;
-    }
-}
 
 module.exports.getUser = async(id)=>{
     let sqlCampos = `id, full_name, email, phone_number, address,`+ 

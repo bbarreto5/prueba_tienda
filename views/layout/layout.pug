@@ -3,17 +3,11 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='/stylesheets/style_layout.css')
-  script(src='https://kit.fontawesome.com/4eb2a2e35e.js' crossorigin='anonymous')
-  title Document
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='stylesheet' href='style.css')
+  link(rel='stylesheet' href='/stylesheets/style_card.css')
   script(src='https://kit.fontawesome.com/4eb2a2e35e.js' crossorigin='anonymous')
   title Document
 body.grid-container
-  .modal.ocultar_modal
+  .modal.ocultar_modal(id="modal")
     .contenedor_lista_pedidos
       .logotipo
         | tienda
@@ -26,73 +20,7 @@ body.grid-container
               th Precio
               th Total
               th Acciones
-          tbody
-            tr
-              td Alfreds Futterkiste
-              td Maria Anders
-              td Germany
-              td Maria Anders
-              td Germany
-            tr
-              td Centro comercial Moctezuma
-              td Francisco Chang
-              td Mexico
-              td Maria Anders
-              td Germany
-            tr
-              td Ernst Handel
-              td Roland Mendel
-              td Austria
-              td Maria Anders
-              td Germany
-            tr
-              td Island Trading
-              td Helen Bennett
-              td UK
-              td Maria Anders
-              td Germany
-            tr
-              td Laughing Bacchus Winecellars
-              td Yoshi Tannamuri
-              td Canada
-              td Maria Anders
-              td Germany
-            tr
-              td Magazzini Alimentari Riuniti
-              td Giovanni Rovelli
-              td Italy
-              td Maria Anders
-              td Germany
-            tr
-              td Magazzini Alimentari Riuniti
-              td Giovanni Rovelli
-              td Italy
-              td Maria Anders
-              td Germany
-            tr
-              td Magazzini Alimentari Riuniti
-              td Giovanni Rovelli
-              td Italy
-              td Maria Anders
-              td Germany
-            tr
-              td Magazzini Alimentari Riuniti
-              td Giovanni Rovelli
-              td Italy
-              td Maria Anders
-              td Germany
-            tr
-              td Magazzini Alimentari Riuniti
-              td Giovanni Rovelli
-              td Italy
-              td Maria Anders
-              td Germany
-            tr
-              td Magazzini Alimentari Riuniti
-              td Giovanni Rovelli
-              td Italy
-              td Maria Anders
-              td Germany
+          tbody(id="tabla")
       .footer_lista
         h3
           | Total: 
@@ -117,9 +45,8 @@ body.grid-container
       i.fas.fa-sign-out-alt
       | cerrar sesi&oacute;n
   header.item2
-    .contenedor_notificacion
-      .contador
-        | 1
+    .contenedor_notificacion(id="notificador_productos")
+      .contador.ocultar_contador(id="contador_productos")
       i.fas.fa-store
   section.item3
     block content

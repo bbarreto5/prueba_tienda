@@ -1,9 +1,9 @@
 const { client } = require('./pg.js');
 
-module.exports.login = async(email,pass)=>{
+module.exports.productos = async()=>{
     try {
       client.connect();
-      let sql = `SELECT nombre, apellido FROM public.usuarios where correo = '${email}' and "n_Identidad" = ${pass};`
+      let sql = `select * from productos;`
       console.log(sql)
       let res = await client.query(sql);
       return res.rows;
