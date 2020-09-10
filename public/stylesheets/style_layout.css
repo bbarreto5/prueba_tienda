@@ -192,4 +192,12 @@
     outline: none;
   }
 
+  .contenedor_costos{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 200px;
+    height: 100%;
+    flex-direction: column; 
+  }
 

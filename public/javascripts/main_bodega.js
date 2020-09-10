@@ -2,14 +2,29 @@ var contador = document.getElementById("contador_productos")
 var notificacion = document.getElementById("notificador_productos")
 var modal = document.getElementById("modal")
 var tabla = document.getElementById("tabla")
+var total = document.getElementById("total")
+var subtotal = document.getElementById("subtotal")
+var imp = document.getElementById("imp")
+
+
 
 
 
 var carrito = [];
 
+function calculo() {
+    let auxtotal = 0
+    carrito.forEach(e =>{
+        auxtotal += e.cantidad * e.precio;
+    })
+    subtotal.innerHTML = auxtotal
+    imp.innerHTML = auxtotal * 0.16
+    total.innerHTML = (auxtotal * 0.16) +auxtotal
+}
 
 notificacion.onclick = ()=>{
     modal.classList.toggle("ocultar_modal");
+    calculo();
 }
 
 modal.onclick = (event)=>{
@@ -76,5 +91,5 @@ function eliminar_producto(index){
         if (!contador.classList.contains('ocultar_contador'))
             contador.classList.add('ocultar_contador');
     }
-
+    calculo();
 }

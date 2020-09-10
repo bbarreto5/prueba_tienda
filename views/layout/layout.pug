@@ -22,9 +22,16 @@ body.grid-container
               th Acciones
           tbody(id="tabla")
       .footer_lista
-        h3
-          | Total: 
-          span 0.00
+        .contenedor_costos
+          h4
+            | Subtotal: 
+            span(id="subtotal") 0.00
+          h4
+            | Imp: 
+            span(id="imp") 0.00
+          h3
+            | Total: 
+            span(id="total") 0.00
         button.boton_pedir
           | Comprar
   nav.item1
