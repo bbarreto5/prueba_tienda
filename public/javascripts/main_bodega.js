@@ -5,12 +5,29 @@ var tabla = document.getElementById("tabla")
 var total = document.getElementById("total")
 var subtotal = document.getElementById("subtotal")
 var imp = document.getElementById("imp")
-
-
-
-
+var comprar = document.getElementById("comprar")
 
 var carrito = [];
+
+
+
+
+comprar.onclick = ()=>{
+    if (carrito.length) {
+        fetch("/comprar", {
+            method: 'POST', 
+            body: JSON.stringify(carrito), 
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+        .catch(error => alert("error en la peticion"))
+        .then(res => {
+            
+        })   
+    }
+}
+
 
 function calculo() {
     let auxtotal = 0
@@ -55,13 +72,14 @@ function plus(param) {
     }
 }
 
-function agregar(precio, nodo, nombre) {
+function agregar(precio, nodo, nombre, id) {
     let cantidad = parseInt(nodo.parentNode.childNodes[3].childNodes[1].childNodes[1].innerHTML);
     if(cantidad > 0) {
         contador.innerHTML = carrito.push({
             precio,
             cantidad,
-            nombre
+            nombre,
+            id
         })
         if (contador.classList.contains('ocultar_contador'))
             contador.classList.remove('ocultar_contador');
