@@ -40,11 +40,13 @@ body.grid-container
       .carta_nombre= nombre
     ul.menu
       li.rutas
-        i.fas.fa-clipboard-list
-        | Pedido
+        a(href='/pedido')
+          i.fas.fa-clipboard-list
+          | Pedido
       li.rutas
-        i.fas.fa-chart-bar
-        | Estadistica
+        a(href='/bodega')
+          i.fas.fa-chart-bar
+          | Estadistica
       li.rutas
         i.fas.fa-list-alt
         | Bodega

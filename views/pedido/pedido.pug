@@ -1,0 +1,18 @@
+extends ../layout/layout
+
+block content
+    .contenedor_table_pedidos
+        table.lista_pedidos
+          thead
+            tr
+              th #
+              th total
+              th fecha
+              th estado
+          tbody
+            each p in pedidos 
+                tr
+                    th= p.id
+                    th= p.total
+                    th= p.fecha
+                    th= p.estado

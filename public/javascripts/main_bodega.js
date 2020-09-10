@@ -14,16 +14,24 @@ var carrito = [];
 
 comprar.onclick = ()=>{
     if (carrito.length) {
-        fetch("/comprar", {
+        fetch("api/comprar", {
             method: 'POST', 
-            body: JSON.stringify(carrito), 
+            body: JSON.stringify({carrito}), 
             headers:{
                 'Content-Type': 'application/json'
             }
         }).then(res => res.json())
         .catch(error => alert("error en la peticion"))
         .then(res => {
-            
+            if(res.success){
+                carrito = [];
+                calculo();
+                tabla.innerHTML = "";
+                contador.classList.add('ocultar_contador')
+                alert("Pedido creado")
+            }else{
+                alert("todo mal")
+            }
         })   
     }
 }

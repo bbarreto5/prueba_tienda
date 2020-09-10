@@ -1,4 +1,5 @@
 const { login } = require('./login.js');
+const { crearPedido } = require('./bodega.js');
 var express = require('express');
 var router = express.Router();
 
@@ -13,9 +14,6 @@ function validateEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
-
-
-/* GET home page. */
 router.post('/login', async function(req, res, next) {
   let { email, pass } = req.body;
   try {
@@ -28,8 +26,9 @@ router.post('/login', async function(req, res, next) {
       }else{
         req.session.email = email;
         req.session.name = aux[0].nombre+" "+aux[0].apellido;
+        req.session.idCliente = aux[0].id;
         req.session.save();
-        res.status(400).json({
+        res.status(200).json({
           success: true
         })
       }
@@ -39,6 +38,20 @@ router.post('/login', async function(req, res, next) {
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
+  }
+});
+
+router.post('/comprar', async function(req, res, next) {
+  let { carrito } = req.body
+  let { idCliente } = req.session
+  console.log(carrito,idCliente)
+  try {
+    let pedido = await crearPedido(idCliente,carrito);
+    (pedido)
+    ? res.status(200).json({ success: true })
+    : res.status(200).json({ success: false })
+  } catch (error) {
+    res.status(500).json({ success: true })
   }
 });
 
